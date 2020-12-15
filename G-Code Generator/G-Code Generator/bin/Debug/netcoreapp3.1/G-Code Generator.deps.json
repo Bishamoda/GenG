@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "G-Code Generator/1.0.0": {
+        "runtime": {
+          "G-Code Generator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "G-Code Generator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

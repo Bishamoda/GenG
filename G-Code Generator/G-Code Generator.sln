@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G-Code Generator", "G-Code Generator\G-Code Generator.csproj", "{16ADF9A7-B43E-48F4-9E44-7FE8B085C754}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16ADF9A7-B43E-48F4-9E44-7FE8B085C754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16ADF9A7-B43E-48F4-9E44-7FE8B085C754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16ADF9A7-B43E-48F4-9E44-7FE8B085C754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16ADF9A7-B43E-48F4-9E44-7FE8B085C754}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30C1BFEF-88FA-4AE9-9868-3D2069E76D74}
+	EndGlobalSection
+EndGlobal

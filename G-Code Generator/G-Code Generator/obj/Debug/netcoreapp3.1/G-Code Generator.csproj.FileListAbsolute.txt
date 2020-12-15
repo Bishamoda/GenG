@@ -1,0 +1,41 @@
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.exe
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.deps.json
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.runtimeconfig.json
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.runtimeconfig.dev.json
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.dll
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.pdb
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.csproj.GenerateResource.cache
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.AssemblyInfoInputs.cache
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.AssemblyInfo.cs
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.csproj.CoreCompileInputs.cache
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.dll
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.pdb
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.genruntimeconfig.cache
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Line.resources
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Circle.resources
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Faska.resources
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Skrug.resources
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Start.resources
+C:\Users\Mike\Desktop\ДИПЛОМ ТУТ ЖЕСТЬ\прога\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.csprojAssemblyReference.cache
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.exe
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.deps.json
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.runtimeconfig.json
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.runtimeconfig.dev.json
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.dll
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\bin\Debug\netcoreapp3.1\G-Code Generator.pdb
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.csprojAssemblyReference.cache
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Circle.resources
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Faska.resources
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Line.resources
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Skrug.resources
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.csproj.GenerateResource.cache
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.AssemblyInfoInputs.cache
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.AssemblyInfo.cs
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.csproj.CoreCompileInputs.cache
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.dll
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.pdb
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G-Code Generator.genruntimeconfig.cache
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.GMTable.resources
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.StartMenu.resources
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.StartFrez.resources
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.StartTok.resources
