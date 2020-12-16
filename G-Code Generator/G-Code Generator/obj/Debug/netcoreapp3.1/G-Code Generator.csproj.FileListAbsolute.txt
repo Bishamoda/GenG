@@ -39,3 +39,4 @@ C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\
 C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.StartMenu.resources
 C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.StartFrez.resources
 C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.StartTok.resources
+C:\Users\Mike\Desktop\Прога диплом\G-Code Generator\G-Code Generator\obj\Debug\netcoreapp3.1\G_Code_Generator.Properties.Resources.resources

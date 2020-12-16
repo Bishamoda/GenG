@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace G_Code_Generator
 {
     public partial class StartTok : Form
     {
 
-        double X, Y;
-        
-        string l1, l2;
+        string l1, c1;
         
         
 
@@ -23,7 +22,39 @@ namespace G_Code_Generator
         public StartTok()
         {
             InitializeComponent();
-           
+
+
+            //Создание меню сохраннения файла
+            ToolStripMenuItem fileItem = new ToolStripMenuItem("Файл");
+            ToolStripMenuItem openItem = new ToolStripMenuItem("Открыть");
+            fileItem.DropDownItems.Add(openItem);
+            openItem.Click += openItem_Clicked;
+            ToolStripMenuItem saveItem = new ToolStripMenuItem("Сохранить");
+            saveItem.Click += saveItem_Clicked;
+            fileItem.DropDownItems.Add(saveItem);
+            menuStrip1.Items.Add(fileItem);
+            //
+
+        }
+        void openItem_Clicked(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                
+                textG.Text = File.ReadAllText(openFileDialog1.FileName, Encoding.Default);
+                
+            }
+
+        }
+        void saveItem_Clicked(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog1.FileName, textG.Text, Encoding.Default);
+            }
+
         }
 
         private void buttonCircle_Click(object sender, EventArgs e)
@@ -43,9 +74,10 @@ namespace G_Code_Generator
                 }
                 else
                 {
-                    
-                //    textG.SelectionStart = textG.TextLength;
-                //    textG.ScrollToCaret();
+                    c1 = cr2.Txt1;
+                    textG.SelectionStart = textG.TextLength;
+                    textG.ScrollToCaret();
+                    textG.Text = textG.Text + Environment.NewLine + c1;
                 }
             }
             else
@@ -69,7 +101,7 @@ namespace G_Code_Generator
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
 
             if (MessageBox.Show("Вернуться в главное меню?", "Внимание", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -81,6 +113,20 @@ namespace G_Code_Generator
                 this.Focus();
             }
         }
+
+        
+
+        private void skrug_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Faska_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
 
         private void btnDel_Click(object sender, EventArgs e)
         {
@@ -101,10 +147,10 @@ namespace G_Code_Generator
                 }
                 else
                 {
-                    //l1 = ln2.Txt1;
-                    //l2 = ln2.Txt2;
-                    //textG.SelectionStart = textG.TextLength;
-                    //textG.ScrollToCaret();
+                    l1 = ln2.Txt1;
+                    textG.SelectionStart = textG.TextLength;
+                    textG.ScrollToCaret();
+                    textG.Text = textG.Text + Environment.NewLine + l1;
                 }
             }
             else

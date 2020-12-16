@@ -35,7 +35,18 @@
             this.skrug = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnGTable = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtS = new System.Windows.Forms.TextBox();
+            this.txtT = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textG
@@ -51,7 +62,7 @@
             // 
             // buttonLine
             // 
-            this.buttonLine.Location = new System.Drawing.Point(404, 68);
+            this.buttonLine.Location = new System.Drawing.Point(18, 27);
             this.buttonLine.Name = "buttonLine";
             this.buttonLine.Size = new System.Drawing.Size(94, 24);
             this.buttonLine.TabIndex = 2;
@@ -61,7 +72,7 @@
             // 
             // buttonCircle
             // 
-            this.buttonCircle.Location = new System.Drawing.Point(504, 68);
+            this.buttonCircle.Location = new System.Drawing.Point(118, 27);
             this.buttonCircle.Name = "buttonCircle";
             this.buttonCircle.Size = new System.Drawing.Size(78, 24);
             this.buttonCircle.TabIndex = 3;
@@ -71,21 +82,23 @@
             // 
             // Faska
             // 
-            this.Faska.Location = new System.Drawing.Point(588, 68);
+            this.Faska.Location = new System.Drawing.Point(202, 27);
             this.Faska.Name = "Faska";
             this.Faska.Size = new System.Drawing.Size(79, 24);
             this.Faska.TabIndex = 4;
             this.Faska.Text = "Фаска";
             this.Faska.UseVisualStyleBackColor = true;
+            this.Faska.Click += new System.EventHandler(this.Faska_Click);
             // 
             // skrug
             // 
-            this.skrug.Location = new System.Drawing.Point(669, 68);
+            this.skrug.Location = new System.Drawing.Point(283, 27);
             this.skrug.Name = "skrug";
             this.skrug.Size = new System.Drawing.Size(82, 24);
             this.skrug.TabIndex = 5;
             this.skrug.Text = "Скругление";
             this.skrug.UseVisualStyleBackColor = true;
+            this.skrug.Click += new System.EventHandler(this.skrug_Click);
             // 
             // btnDel
             // 
@@ -99,7 +112,7 @@
             // 
             // btnGTable
             // 
-            this.btnGTable.Location = new System.Drawing.Point(757, 68);
+            this.btnGTable.Location = new System.Drawing.Point(320, 315);
             this.btnGTable.Name = "btnGTable";
             this.btnGTable.Size = new System.Drawing.Size(110, 24);
             this.btnGTable.TabIndex = 7;
@@ -107,16 +120,90 @@
             this.btnGTable.UseVisualStyleBackColor = true;
             this.btnGTable.Click += new System.EventHandler(this.btnGTable_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.Location = new System.Drawing.Point(719, 600);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(143, 23);
+            this.btnBack.TabIndex = 8;
+            this.btnBack.Text = "В главное меню";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.skrug);
+            this.panel1.Controls.Add(this.buttonLine);
+            this.panel1.Controls.Add(this.buttonCircle);
+            this.panel1.Controls.Add(this.Faska);
+            this.panel1.Location = new System.Drawing.Point(320, 376);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(542, 208);
+            this.panel1.TabIndex = 9;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(787, 217);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Записать";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(874, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(625, 170);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Частота оборот шпинделя S:";
+            // 
+            // txtS
+            // 
+            this.txtS.Location = new System.Drawing.Point(796, 167);
+            this.txtS.Name = "txtS";
+            this.txtS.Size = new System.Drawing.Size(66, 23);
+            this.txtS.TabIndex = 13;
+            // 
+            // txtT
+            // 
+            this.txtT.Location = new System.Drawing.Point(796, 98);
+            this.txtT.Name = "txtT";
+            this.txtT.Size = new System.Drawing.Size(66, 23);
+            this.txtT.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(713, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Инструмент:";
+            // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(719, 600);
+            this.button1.Location = new System.Drawing.Point(719, 127);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "В главное меню";
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Смена инструмента";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StartTok
             // 
@@ -125,16 +212,23 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(874, 643);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtT);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtS);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnGTable);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.skrug);
-            this.Controls.Add(this.Faska);
-            this.Controls.Add(this.buttonCircle);
-            this.Controls.Add(this.buttonLine);
             this.Controls.Add(this.textG);
+            this.Controls.Add(this.menuStrip1);
             this.HelpButton = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "StartTok";
-            this.Text = "G Code Generator";
+            this.Text = "Токарная обработка";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,6 +242,16 @@
         private System.Windows.Forms.Button skrug;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnGTable;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtS;
+        private System.Windows.Forms.TextBox txtT;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
     }
 }
