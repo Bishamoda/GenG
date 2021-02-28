@@ -157,9 +157,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(38, 131);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 15);
+            this.label5.Size = new System.Drawing.Size(71, 15);
             this.label5.TabIndex = 25;
-            this.label5.Text = "Радиус F:";
+            this.label5.Text = "Скорость F:";
             // 
             // txtR
             // 
@@ -188,7 +188,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Circle";
-            this.Text = "Circle";
+            this.Text = "Круговая интерполяция";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

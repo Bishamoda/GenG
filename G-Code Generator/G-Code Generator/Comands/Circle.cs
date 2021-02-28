@@ -17,6 +17,8 @@ namespace G_Code_Generator
             InitializeComponent();
         }
 
+       
+
         private void btnOK_Click(object sender, EventArgs e)
         {
 

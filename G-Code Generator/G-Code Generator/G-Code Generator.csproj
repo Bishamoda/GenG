@@ -8,9 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Turning\" />
     <Folder Include="images\" />
-    <Folder Include="Сutting\" />
   </ItemGroup>
 
   <ItemGroup>

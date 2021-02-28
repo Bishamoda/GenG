@@ -58,7 +58,7 @@
             this.textG.Name = "textG";
             this.textG.Size = new System.Drawing.Size(281, 525);
             this.textG.TabIndex = 1;
-            this.textG.Text = "G21 G40 G49 G54 G80 G90";
+            this.textG.Text = "G21 G40 G49 G54 G80 G90\r\n";
             // 
             // buttonLine
             // 
@@ -88,7 +88,7 @@
             this.Faska.TabIndex = 4;
             this.Faska.Text = "Фаска";
             this.Faska.UseVisualStyleBackColor = true;
-            this.Faska.Click += new System.EventHandler(this.Faska_Click);
+            this.Faska.Click += new System.EventHandler(this.faska_Click);
             // 
             // skrug
             // 

@@ -37,6 +37,12 @@ namespace G_Code_Generator
 
         }
 
+        private void btnClearCoord_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+        }
+
         public string Txt1
         {
 
@@ -47,16 +53,6 @@ namespace G_Code_Generator
             }
 
         }
-
-        //public string Txt2
-        //{
-
-        //    get
-        //    {
-                
-        //        return b;
-        //    }
-        //}
 
         private void btnG01_Click(object sender, EventArgs e)
         {
@@ -71,10 +67,10 @@ namespace G_Code_Generator
                 b = textBox2.Text;
                 c = txtF.Text;
 
+
                 txtLine.Text = txtLine.Text + Environment.NewLine + "G01  X "+ a + " Z "+ b + " F " + c + ";";
 
-                textBox1.Clear();
-                textBox2.Clear();
+               
             }
         }
 
@@ -92,8 +88,7 @@ namespace G_Code_Generator
                 
                 txtLine.Text = txtLine.Text + Environment.NewLine + "G00  X " + a + " Z " + b + ";";
 
-                textBox1.Clear();
-                textBox2.Clear();
+               
             }
         }
 

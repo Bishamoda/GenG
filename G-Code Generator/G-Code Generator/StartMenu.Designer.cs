@@ -31,7 +31,6 @@ namespace G_Code_Generator
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartMenu));
             this.btnTok = new System.Windows.Forms.Button();
-            this.btnFrez = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -42,13 +41,6 @@ namespace G_Code_Generator
             this.btnTok.Name = "btnTok";
             this.btnTok.UseVisualStyleBackColor = true;
             this.btnTok.Click += new System.EventHandler(this.btnTok_Click);
-            // 
-            // btnFrez
-            // 
-            resources.ApplyResources(this.btnFrez, "btnFrez");
-            this.btnFrez.Name = "btnFrez";
-            this.btnFrez.UseVisualStyleBackColor = true;
-            this.btnFrez.Click += new System.EventHandler(this.btnFrez_Click);
             // 
             // btnAbout
             // 
@@ -71,7 +63,6 @@ namespace G_Code_Generator
             this.ControlBox = false;
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAbout);
-            this.Controls.Add(this.btnFrez);
             this.Controls.Add(this.btnTok);
             this.MaximizeBox = false;
             this.Name = "StartMenu";
@@ -82,7 +73,6 @@ namespace G_Code_Generator
         #endregion
 
         private System.Windows.Forms.Button btnTok;
-        private System.Windows.Forms.Button btnFrez;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnExit;
     }

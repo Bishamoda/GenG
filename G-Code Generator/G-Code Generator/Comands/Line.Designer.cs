@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtF = new System.Windows.Forms.TextBox();
+            this.btnClearCoord = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +151,16 @@
             this.txtF.Size = new System.Drawing.Size(100, 23);
             this.txtF.TabIndex = 10;
             // 
+            // btnClearCoord
+            // 
+            this.btnClearCoord.Location = new System.Drawing.Point(287, 15);
+            this.btnClearCoord.Name = "btnClearCoord";
+            this.btnClearCoord.Size = new System.Drawing.Size(85, 23);
+            this.btnClearCoord.TabIndex = 12;
+            this.btnClearCoord.Text = "Очистить";
+            this.btnClearCoord.UseVisualStyleBackColor = true;
+            this.btnClearCoord.Click += new System.EventHandler(this.btnClearCoord_Click);
+            // 
             // Line
             // 
             this.AcceptButton = this.btnOK;
@@ -157,6 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(755, 409);
+            this.Controls.Add(this.btnClearCoord);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtF);
             this.Controls.Add(this.label3);
@@ -194,5 +206,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtF;
+        private System.Windows.Forms.Button btnClearCoord;
     }
 }

@@ -14,7 +14,7 @@ namespace G_Code_Generator
     public partial class StartTok : Form
     {
 
-        string l1, c1;
+        private string _l1, _c1;
         
         
 
@@ -74,10 +74,10 @@ namespace G_Code_Generator
                 }
                 else
                 {
-                    c1 = cr2.Txt1;
+                    _c1 = cr2.Txt1;
                     textG.SelectionStart = textG.TextLength;
                     textG.ScrollToCaret();
-                    textG.Text = textG.Text + Environment.NewLine + c1;
+                    textG.Text = textG.Text + Environment.NewLine + _c1;
                 }
             }
             else
@@ -121,7 +121,7 @@ namespace G_Code_Generator
 
         }
 
-        private void Faska_Click(object sender, EventArgs e)
+        private void faska_Click(object sender, EventArgs e)
         {
 
         }
@@ -147,10 +147,10 @@ namespace G_Code_Generator
                 }
                 else
                 {
-                    l1 = ln2.Txt1;
+                    _l1 = ln2.Txt1;
                     textG.SelectionStart = textG.TextLength;
                     textG.ScrollToCaret();
-                    textG.Text = textG.Text + Environment.NewLine + l1;
+                    textG.Text = textG.Text + Environment.NewLine + _l1;
                 }
             }
             else
