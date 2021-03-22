@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtR = new System.Windows.Forms.TextBox();
+            this.btnDel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,11 +169,22 @@
             this.txtR.Size = new System.Drawing.Size(100, 23);
             this.txtR.TabIndex = 24;
             // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(289, 22);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 33);
+            this.btnDel.TabIndex = 26;
+            this.btnDel.Text = "Очистить";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // Circle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 450);
+            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtR);
             this.Controls.Add(this.label4);
@@ -211,5 +223,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtR;
+        private System.Windows.Forms.Button btnDel;
     }
 }

@@ -13,7 +13,8 @@ namespace G_Code_Generator
 {
     public partial class StartTok : Form
     {
-
+        //private string _x;
+        //private string _y;
         private string _l1, _c1;
         
         
@@ -27,15 +28,19 @@ namespace G_Code_Generator
             //Создание меню сохраннения файла
             ToolStripMenuItem fileItem = new ToolStripMenuItem("Файл");
             ToolStripMenuItem openItem = new ToolStripMenuItem("Открыть");
+
             fileItem.DropDownItems.Add(openItem);
             openItem.Click += openItem_Clicked;
+
             ToolStripMenuItem saveItem = new ToolStripMenuItem("Сохранить");
             saveItem.Click += saveItem_Clicked;
             fileItem.DropDownItems.Add(saveItem);
             menuStrip1.Items.Add(fileItem);
-            //
+            
 
         }
+
+        //Кнопка открыть файл c G-Code
         void openItem_Clicked(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -47,6 +52,7 @@ namespace G_Code_Generator
             }
 
         }
+        //Кнопка сохранение файла с G-Code
         void saveItem_Clicked(object sender, EventArgs e)
         {
             saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -57,6 +63,7 @@ namespace G_Code_Generator
 
         }
 
+        //Вызов формы задания движения по окружности
         private void buttonCircle_Click(object sender, EventArgs e)
         {
             
@@ -87,6 +94,7 @@ namespace G_Code_Generator
 
         }
 
+       //Табличка с G/M кодами
         private void btnGTable_Click(object sender, EventArgs e)
         {
             GMTable gmt1 = (GMTable)Application.OpenForms["GMTable"];
@@ -99,8 +107,10 @@ namespace G_Code_Generator
             {
                 gmt1.Activate(); // Активируем форму на передний план (из трея или заднего плана)
             }
+
         }
 
+        //Кнопка возврата в главное меню
         private void btnBack_Click(object sender, EventArgs e)
         {
 
@@ -112,6 +122,7 @@ namespace G_Code_Generator
             {
                 this.Focus();
             }
+
         }
 
         
@@ -127,10 +138,47 @@ namespace G_Code_Generator
         }
 
       
-
+        //Кнопка удаления строчки в главном текстовом окне
         private void btnDel_Click(object sender, EventArgs e)
         {
             textG.Text = textG.Text.Remove(textG.Text.LastIndexOf(Environment.NewLine));
+        }
+
+
+        private void btn_M03_Click(object sender, EventArgs e)
+        {
+            
+            if (string.IsNullOrEmpty(txtM03.Text))
+            {
+                SuccessValue.InvalidData();
+            }
+            else
+            {
+                string M03 = txtM03.Text;
+                textG.SelectionStart = textG.TextLength;
+                textG.ScrollToCaret();
+                textG.Text = textG.Text + Environment.NewLine + "G18 M03 " + M03;
+                
+            }
+
+        }
+
+        
+
+        private void btnToolChange_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtTool.Text))
+            {
+                SuccessValue.InvalidData();
+            }
+            else
+            {
+                string ToolChange = txtTool.Text;
+                textG.SelectionStart = textG.TextLength;
+                textG.ScrollToCaret();
+                textG.Text = textG.Text + Environment.NewLine + "M05 " + Environment.NewLine + "M06  T" + ToolChange;
+
+            }
         }
 
         public void buttonLine_Click(object sender, EventArgs e)

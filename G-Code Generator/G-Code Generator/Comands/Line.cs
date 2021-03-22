@@ -12,7 +12,7 @@ namespace G_Code_Generator
     public partial class Line : Form
     {
 
-        string a, b, c, l;
+        private string _x, _z, _f, _lineForm;
 
         public Line()
         {
@@ -26,12 +26,11 @@ namespace G_Code_Generator
 
             if ((string.IsNullOrEmpty(textBox1.Text)) || (string.IsNullOrEmpty(textBox2.Text) || (string.IsNullOrEmpty(txtF.Text))))
             {
-                MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
+                SuccessValue.InvalidData();
             }
             else
             {
-                l = txtLine.Text;
+                _lineForm = txtLine.Text;
                 Close();
             }
 
@@ -49,7 +48,7 @@ namespace G_Code_Generator
             get
             {
                 
-                return l;
+                return _lineForm;
             }
 
         }
@@ -58,17 +57,24 @@ namespace G_Code_Generator
         {
             if ((string.IsNullOrEmpty(textBox1.Text)) || (string.IsNullOrEmpty(textBox2.Text) || (string.IsNullOrEmpty(txtF.Text))))
             {
-                MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SuccessValue.InvalidData();
 
             }
             else
             {
-                a = textBox1.Text;
-                b = textBox2.Text;
-                c = txtF.Text;
+                _x = textBox1.Text;
+                _z = textBox2.Text;
+                _f = txtF.Text;
 
-
-                txtLine.Text = txtLine.Text + Environment.NewLine + "G01  X "+ a + " Z "+ b + " F " + c + ";";
+                SuccessValue.NextValuesLine(_x, _z);
+                if (SuccessValue.NextValuesLine(_x, _z) == true)
+                {
+                    txtLine.Text = txtLine.Text + Environment.NewLine + "G01  X " + _x + " Z " + _z + " F " + _f + ";";
+                }
+                else
+                {
+                    SuccessValue.InvalidData();
+                }
 
                
             }
@@ -78,23 +84,28 @@ namespace G_Code_Generator
         {
             if ((string.IsNullOrEmpty(textBox1.Text)) || (string.IsNullOrEmpty(textBox2.Text) || (string.IsNullOrEmpty(txtF.Text))))
             {
-                MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SuccessValue.InvalidData();
 
             }
             else
             {
-                a = textBox1.Text;
-                b = textBox2.Text;
-                
-                txtLine.Text = txtLine.Text + Environment.NewLine + "G00  X " + a + " Z " + b + ";";
+                _x = textBox1.Text;
+                _z = textBox2.Text;
+                SuccessValue.NextValuesLine(_x, _z);
 
-               
+                if (SuccessValue.NextValuesLine(_x, _z) == true)
+                {
+                    txtLine.Text = txtLine.Text + Environment.NewLine + "G00  X " + _x + " Z " + _z + ";";
+                }
+                else
+                {
+                    SuccessValue.InvalidData();
+                }
+
+
             }
         }
 
-
-
-
-
+        
     }
 }

@@ -37,15 +37,15 @@
             this.btnGTable = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_M03 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtS = new System.Windows.Forms.TextBox();
-            this.txtT = new System.Windows.Forms.TextBox();
+            this.txtM03 = new System.Windows.Forms.TextBox();
+            this.txtTool = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnToolChange = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,9 +62,9 @@
             // 
             // buttonLine
             // 
-            this.buttonLine.Location = new System.Drawing.Point(18, 27);
+            this.buttonLine.Location = new System.Drawing.Point(26, 18);
             this.buttonLine.Name = "buttonLine";
-            this.buttonLine.Size = new System.Drawing.Size(94, 24);
+            this.buttonLine.Size = new System.Drawing.Size(104, 36);
             this.buttonLine.TabIndex = 2;
             this.buttonLine.Text = "Линия";
             this.buttonLine.UseVisualStyleBackColor = true;
@@ -72,9 +72,9 @@
             // 
             // buttonCircle
             // 
-            this.buttonCircle.Location = new System.Drawing.Point(118, 27);
+            this.buttonCircle.Location = new System.Drawing.Point(136, 18);
             this.buttonCircle.Name = "buttonCircle";
-            this.buttonCircle.Size = new System.Drawing.Size(78, 24);
+            this.buttonCircle.Size = new System.Drawing.Size(78, 36);
             this.buttonCircle.TabIndex = 3;
             this.buttonCircle.Text = "Круг";
             this.buttonCircle.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@
             // 
             // Faska
             // 
-            this.Faska.Location = new System.Drawing.Point(202, 27);
+            this.Faska.Location = new System.Drawing.Point(222, 18);
             this.Faska.Name = "Faska";
-            this.Faska.Size = new System.Drawing.Size(79, 24);
+            this.Faska.Size = new System.Drawing.Size(79, 36);
             this.Faska.TabIndex = 4;
             this.Faska.Text = "Фаска";
             this.Faska.UseVisualStyleBackColor = true;
@@ -92,9 +92,9 @@
             // 
             // skrug
             // 
-            this.skrug.Location = new System.Drawing.Point(283, 27);
+            this.skrug.Location = new System.Drawing.Point(317, 18);
             this.skrug.Name = "skrug";
-            this.skrug.Size = new System.Drawing.Size(82, 24);
+            this.skrug.Size = new System.Drawing.Size(82, 36);
             this.skrug.TabIndex = 5;
             this.skrug.Text = "Скругление";
             this.skrug.UseVisualStyleBackColor = true;
@@ -102,9 +102,9 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(168, 68);
+            this.btnDel.Location = new System.Drawing.Point(168, 60);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(125, 24);
+            this.btnDel.Size = new System.Drawing.Size(125, 32);
             this.btnDel.TabIndex = 6;
             this.btnDel.Text = "Удалить строчку";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -112,9 +112,9 @@
             // 
             // btnGTable
             // 
-            this.btnGTable.Location = new System.Drawing.Point(320, 315);
+            this.btnGTable.Location = new System.Drawing.Point(414, 18);
             this.btnGTable.Name = "btnGTable";
-            this.btnGTable.Size = new System.Drawing.Size(110, 24);
+            this.btnGTable.Size = new System.Drawing.Size(110, 36);
             this.btnGTable.TabIndex = 7;
             this.btnGTable.Text = "Таблица G/M";
             this.btnGTable.UseVisualStyleBackColor = true;
@@ -123,9 +123,9 @@
             // btnBack
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBack.Location = new System.Drawing.Point(719, 600);
+            this.btnBack.Location = new System.Drawing.Point(719, 590);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(143, 23);
+            this.btnBack.Size = new System.Drawing.Size(143, 33);
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "В главное меню";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -138,19 +138,21 @@
             this.panel1.Controls.Add(this.buttonLine);
             this.panel1.Controls.Add(this.buttonCircle);
             this.panel1.Controls.Add(this.Faska);
-            this.panel1.Location = new System.Drawing.Point(320, 376);
+            this.panel1.Controls.Add(this.btnGTable);
+            this.panel1.Location = new System.Drawing.Point(320, 494);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(542, 208);
+            this.panel1.Size = new System.Drawing.Size(542, 69);
             this.panel1.TabIndex = 9;
             // 
-            // button2
+            // btn_M03
             // 
-            this.button2.Location = new System.Drawing.Point(787, 217);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Записать";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_M03.Location = new System.Drawing.Point(322, 166);
+            this.btn_M03.Name = "btn_M03";
+            this.btn_M03.Size = new System.Drawing.Size(75, 30);
+            this.btn_M03.TabIndex = 10;
+            this.btn_M03.Text = "Записать";
+            this.btn_M03.UseVisualStyleBackColor = true;
+            this.btn_M03.Click += new System.EventHandler(this.btn_M03_Click);
             // 
             // openFileDialog1
             // 
@@ -167,43 +169,44 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(625, 170);
+            this.label1.Location = new System.Drawing.Point(297, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 15);
             this.label1.TabIndex = 12;
             this.label1.Text = "Частота оборот шпинделя S:";
             // 
-            // txtS
+            // txtM03
             // 
-            this.txtS.Location = new System.Drawing.Point(796, 167);
-            this.txtS.Name = "txtS";
-            this.txtS.Size = new System.Drawing.Size(66, 23);
-            this.txtS.TabIndex = 13;
+            this.txtM03.Location = new System.Drawing.Point(468, 132);
+            this.txtM03.Name = "txtM03";
+            this.txtM03.Size = new System.Drawing.Size(66, 23);
+            this.txtM03.TabIndex = 13;
             // 
-            // txtT
+            // txtTool
             // 
-            this.txtT.Location = new System.Drawing.Point(796, 98);
-            this.txtT.Name = "txtT";
-            this.txtT.Size = new System.Drawing.Size(66, 23);
-            this.txtT.TabIndex = 15;
+            this.txtTool.Location = new System.Drawing.Point(796, 127);
+            this.txtTool.Name = "txtTool";
+            this.txtTool.Size = new System.Drawing.Size(66, 23);
+            this.txtTool.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(713, 98);
+            this.label2.Location = new System.Drawing.Point(704, 130);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.Size = new System.Drawing.Size(86, 15);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Инструмент:";
+            this.label2.Text = "Инструмент T:";
             // 
-            // button1
+            // btnToolChange
             // 
-            this.button1.Location = new System.Drawing.Point(719, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Смена инструмента";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnToolChange.Location = new System.Drawing.Point(719, 156);
+            this.btnToolChange.Name = "btnToolChange";
+            this.btnToolChange.Size = new System.Drawing.Size(143, 30);
+            this.btnToolChange.TabIndex = 16;
+            this.btnToolChange.Text = "Смена инструмента";
+            this.btnToolChange.UseVisualStyleBackColor = true;
+            this.btnToolChange.Click += new System.EventHandler(this.btnToolChange_Click);
             // 
             // StartTok
             // 
@@ -211,15 +214,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(874, 643);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtT);
+            this.Controls.Add(this.btnToolChange);
+            this.Controls.Add(this.txtTool);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtS);
+            this.Controls.Add(this.txtM03);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_M03);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnGTable);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.textG);
             this.Controls.Add(this.menuStrip1);
@@ -244,15 +246,15 @@
         private System.Windows.Forms.Button btnGTable;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_M03;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtS;
-        private System.Windows.Forms.TextBox txtT;
+        private System.Windows.Forms.TextBox txtM03;
+        private System.Windows.Forms.TextBox txtTool;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnToolChange;
     }
 }
 

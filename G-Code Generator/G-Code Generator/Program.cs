@@ -20,7 +20,7 @@ namespace G_Code_Generator
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartMenu());
+            Application.Run(new StartTok());
         }
     }
 }

@@ -32,26 +32,11 @@ namespace G_Code_Generator
             }
         }
 
-        private void btnFrez_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(" Извините, в данный момент этот функционал не поддерживается. ");
-
-            //StartFrez frez1 = (StartFrez)Application.OpenForms["StartFrez"];
-            //if (frez1 == null) // Если форма не существует, то создаём
-            //{
-            //    StartFrez frez2 = new StartFrez();
-            //    frez2.Show();
-            //}
-            //else
-            //{
-            //    frez1.Activate(); // Активируем форму на передний план (из трея или заднего плана)
-            //}
-        }
-
+        
         private void btnAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Добро пождаловать в программу генерации G-кода! Для дальнейшей работы выберете вид обработки:" +
-                " токарный и приступайте к формированию своего контура детали типа тел вращения. ");
+                " токарный и приступайте к формированию своего контура детали. ");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
