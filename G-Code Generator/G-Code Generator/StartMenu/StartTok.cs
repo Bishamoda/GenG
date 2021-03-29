@@ -13,8 +13,8 @@ namespace G_Code_Generator
 {
     public partial class StartTok : Form
     {
-        //private string _x;
-        //private string _y;
+        private string _x;
+        private string _z;
         private string _l1, _c1;
         
         
@@ -23,7 +23,22 @@ namespace G_Code_Generator
         public StartTok()
         {
             InitializeComponent();
+            textG.ScrollBars = ScrollBars.Both;
 
+            checkBoxG90.Checked = true;
+            checkBoxM03.Checked = true;
+
+            ToolTip t03 = new ToolTip();
+            t03.SetToolTip(checkBoxM03, "Вращение по часовой стрелке");
+            ToolTip t04 = new ToolTip();
+            t03.SetToolTip(checkBoxM04, "Вращение против часовой стрелки");
+
+            ToolTip t90 = new ToolTip();
+            t90.SetToolTip(checkBoxG90, "При абсолютном способе координаты точек отсчитываются от постоянного начала координат. ");
+            ToolTip t91 = new ToolTip();
+            t91.SetToolTip(checkBoxG91, "При относительном (инкрементальном) способе отсчета" + Environment.NewLine +
+                " за нулевое положение каждый раз принимается положение исполнительного органа, " + Environment.NewLine +
+                "которое он занимал перед началом перемещения к следующей опорной точке. ");
 
             //Создание меню сохраннения файла
             ToolStripMenuItem fileItem = new ToolStripMenuItem("Файл");
@@ -141,7 +156,11 @@ namespace G_Code_Generator
         //Кнопка удаления строчки в главном текстовом окне
         private void btnDel_Click(object sender, EventArgs e)
         {
-            textG.Text = textG.Text.Remove(textG.Text.LastIndexOf(Environment.NewLine));
+            if (textG.Text != "G21 G40 G49 G54 G80 G90")
+            {
+                textG.Text = textG.Text.Remove(textG.Text.LastIndexOf(Environment.NewLine));
+            }
+            
         }
 
 
@@ -154,11 +173,29 @@ namespace G_Code_Generator
             }
             else
             {
-                string M03 = txtM03.Text;
-                textG.SelectionStart = textG.TextLength;
-                textG.ScrollToCaret();
-                textG.Text = textG.Text + Environment.NewLine + "G18 M03 " + M03;
-                
+                string oborotShpindel = txtM03.Text;
+                SuccessValue.CheckValueShpindel(oborotShpindel);
+
+                if (SuccessValue.CheckValueShpindel(oborotShpindel) == true)
+                {
+                    if (checkBoxM03.Checked == true)
+                    {
+                        textG.SelectionStart = textG.TextLength;
+                        textG.ScrollToCaret();
+                        textG.Text = textG.Text + Environment.NewLine + "G18 M03 " + oborotShpindel;
+                    }
+
+                    if (checkBoxM04.Checked == true)
+                    {
+                        textG.SelectionStart = textG.TextLength;
+                        textG.ScrollToCaret();
+                        textG.Text = textG.Text + Environment.NewLine + "G18 M04 " + oborotShpindel;
+                    }
+                }
+                else
+                {
+                    SuccessValue.InvalidData();
+                }
             }
 
         }
@@ -179,6 +216,76 @@ namespace G_Code_Generator
                 textG.Text = textG.Text + Environment.NewLine + "M05 " + Environment.NewLine + "M06  T" + ToolChange;
 
             }
+        }
+
+
+        private void checkBoxG90_Click(object sender, EventArgs e)
+        {
+            if (checkBoxG91.Checked == true)
+            {
+                checkBoxG91.Checked = false;
+                checkBoxG90.Checked = true;
+
+                textG.SelectionStart = textG.TextLength;
+                textG.ScrollToCaret();
+                textG.Text = textG.Text + Environment.NewLine + "G90 ";
+
+            }
+            else
+            {
+                checkBoxG91.Checked = true;
+                checkBoxG90.Checked = false;
+            }
+        }
+
+        private void checkBoxG91_Click(object sender, EventArgs e)
+        {
+            if (checkBoxG90.Checked == true)
+            {
+                checkBoxG90.Checked = false;
+                checkBoxG91.Checked = true;
+
+                textG.SelectionStart = textG.TextLength;
+                textG.ScrollToCaret();
+                textG.Text = textG.Text + Environment.NewLine + "G91 ";
+            }
+            else
+            {
+                checkBoxG91.Checked = true;
+                checkBoxG90.Checked = false;
+            }
+        }
+
+        private void checkBoxM03_Click(object sender, EventArgs e)
+        {
+
+            if (checkBoxM04.Checked == true)
+            {
+                checkBoxM04.Checked = false;
+                checkBoxM03.Checked = true;
+            }
+            else
+            {
+
+                checkBoxM04.Checked = true;
+                checkBoxM03.Checked = false;
+            }
+        }
+
+        private void checkBoxM04_Click(object sender, EventArgs e)
+        {
+            if (checkBoxM03.Checked == true)
+            {
+                checkBoxM04.Checked = true;
+                checkBoxM03.Checked = false;
+            }
+            else
+            {
+
+                checkBoxM04.Checked = false;
+                checkBoxM03.Checked = true;
+            }
+
         }
 
         public void buttonLine_Click(object sender, EventArgs e)

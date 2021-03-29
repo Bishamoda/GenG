@@ -30,7 +30,7 @@ namespace G_Code_Generator
         private void btnOK_Click(object sender, EventArgs e)
         {
 
-            if ((string.IsNullOrEmpty(textBox1.Text)) || (string.IsNullOrEmpty(textBox2.Text) || (string.IsNullOrEmpty(txtF.Text) || (string.IsNullOrEmpty(txtF.Text)))))
+            if ((string.IsNullOrEmpty(textBox1.Text)) || (string.IsNullOrEmpty(textBox2.Text) || (string.IsNullOrEmpty(txtR.Text) || (string.IsNullOrEmpty(txtF.Text)))))
             {
                 SuccessValue.InvalidData();
 
@@ -45,7 +45,7 @@ namespace G_Code_Generator
 
         private void btnG2_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrEmpty(textBox1.Text)) || (string.IsNullOrEmpty(textBox2.Text) || (string.IsNullOrEmpty(txtF.Text) || (string.IsNullOrEmpty(txtF.Text)))))
+            if ((string.IsNullOrEmpty(textBox1.Text)) || (string.IsNullOrEmpty(textBox2.Text) || (string.IsNullOrEmpty(txtR.Text) || (string.IsNullOrEmpty(txtF.Text)))))
             {
                 SuccessValue.InvalidData();
 
