@@ -11,6 +11,7 @@ namespace G_Code_Generator
     public partial class Circle : Form
     {
         private string _x, _z, _r, _f, _circleForm;
+        public string Txt1 { get { return _circleForm; } }
 
         public Circle()
         {
@@ -41,9 +42,6 @@ namespace G_Code_Generator
             }
 
         }
-
-        public string Txt1 { get { return _circleForm; }}
-
 
         private void btnG2_Click(object sender, EventArgs e)
         {

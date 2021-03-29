@@ -14,6 +14,7 @@ namespace G_Code_Generator
 
         private string _x, _z, _f, _lineForm;
 
+        public string Txt1 { get { return _lineForm; } }
         public Line()
         {
             InitializeComponent();
@@ -42,16 +43,6 @@ namespace G_Code_Generator
             textBox2.Clear();
         }
 
-        public string Txt1
-        {
-
-            get
-            {
-                
-                return _lineForm;
-            }
-
-        }
 
         private void btnG01_Click(object sender, EventArgs e)
         {
