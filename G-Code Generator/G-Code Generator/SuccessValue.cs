@@ -21,6 +21,9 @@ namespace G_Code_Generator
 
         public static bool successR = false;
 
+        private static bool successSpindel = false;
+        private static decimal _value;
+
 
         public static bool NextValuesLine(string X, string Z)
         {
@@ -89,6 +92,28 @@ namespace G_Code_Generator
             }
 
             return successR;
+        }
+
+        public static bool CheckValueShpindel(string shpindel)
+        {
+            successSpindel = decimal.TryParse(shpindel, out _value);
+
+            if (successSpindel == true)
+            {
+                if (_value > 0 && _value <= 10000)
+                {
+                    return true;
+                }
+                else
+                { 
+                    return false; 
+                }
+                
+            }
+            else
+            { 
+                return false; 
+            }
         }
 
 
