@@ -182,14 +182,14 @@ namespace G_Code_Generator
                     {
                         textG.SelectionStart = textG.TextLength;
                         textG.ScrollToCaret();
-                        textG.Text = textG.Text + Environment.NewLine + "G18 M03 " + oborotShpindel;
+                        textG.Text = textG.Text + Environment.NewLine + "G18 M03 S" + oborotShpindel;
                     }
 
                     if (checkBoxM04.Checked == true)
                     {
                         textG.SelectionStart = textG.TextLength;
                         textG.ScrollToCaret();
-                        textG.Text = textG.Text + Environment.NewLine + "G18 M04 " + oborotShpindel;
+                        textG.Text = textG.Text + Environment.NewLine + "G18 M04 S" + oborotShpindel;
                     }
                 }
                 else
@@ -286,6 +286,32 @@ namespace G_Code_Generator
                 checkBoxM03.Checked = true;
             }
 
+        }
+
+        private void btn_StartPosition_Click(object sender, EventArgs e)
+        {
+            if ((string.IsNullOrEmpty(textBoxStartX.Text)) || (string.IsNullOrEmpty(textBoxStartZ.Text)))
+            {
+                SuccessValue.InvalidData();
+
+            }
+            else
+            {
+                _x = textBoxStartX.Text;
+                _z = textBoxStartZ.Text;
+                SuccessValue.NextValuesLine(_x, _z);
+
+                if (SuccessValue.NextValuesLine(_x, _z) == true)
+                {
+                    textG.Text = textG.Text + Environment.NewLine + "G00  X " + _x + " Z " + _z + ";";
+                }
+                else
+                {
+                    SuccessValue.InvalidData();
+                }
+
+
+            }
         }
 
         public void buttonLine_Click(object sender, EventArgs e)

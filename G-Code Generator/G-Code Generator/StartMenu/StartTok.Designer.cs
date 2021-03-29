@@ -320,6 +320,7 @@
             this.btn_StartPosition.TabIndex = 27;
             this.btn_StartPosition.Text = "Записать";
             this.btn_StartPosition.UseVisualStyleBackColor = true;
+            this.btn_StartPosition.Click += new System.EventHandler(this.btn_StartPosition_Click);
             // 
             // checkBoxM03
             // 

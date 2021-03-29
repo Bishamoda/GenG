@@ -58,7 +58,9 @@ namespace G_Code_Generator
                 _f = txtF.Text;
 
                 SuccessValue.NextValuesLine(_x, _z);
-                if (SuccessValue.NextValuesLine(_x, _z) == true)
+                SuccessValue.CheckValueSpeed(_f);
+
+                if (SuccessValue.NextValuesLine(_x, _z) && SuccessValue.CheckValueSpeed(_f) == true)
                 {
                     txtLine.Text = txtLine.Text + Environment.NewLine + "G01  X " + _x + " Z " + _z + " F " + _f + ";";
                 }

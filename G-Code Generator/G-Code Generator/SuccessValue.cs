@@ -30,7 +30,7 @@ namespace G_Code_Generator
             successX = decimal.TryParse(X, out _X);
             successZ = decimal.TryParse(Z, out _Z);
 
-            if (successX && successZ == true)
+            if ((successX && successZ == true) && (_X >= -10000) && (_X <= 10000) && (_Z >= -10000) && (_Z <= 10000))
             {
                 return true;
             }
@@ -50,7 +50,7 @@ namespace G_Code_Generator
             if (successNX && successNZ && successNR == true)
             {
 
-                if ((_nX - _X == -(_R)) && (Math.Abs(_nZ - _Z) == _R))
+                if ((_nX >= -10000) && (_nX <= 10000) && (_nZ >= -10000) && (_nZ <= 10000) && (_nX - _X == -(_R)) && (Math.Abs(_nZ - _Z) == _R) && (_R >= -10000) && (_R <= 10000))
                 {
                     successR = true;
                 }
@@ -76,7 +76,7 @@ namespace G_Code_Generator
 
             if (successNX && successNZ && successNR == true)
             {
-                if ((_nX - _X == _R) && (Math.Abs(_nZ - _Z) == _R))
+                if ((_nX - _X == _R) && (Math.Abs(_nZ - _Z) == _R) && (_nX >= -10000) && (_nX <= 10000) && (_nZ >= -10000) && (_nZ <= 10000) && (_R >= -10000) && (_R <= 10000))
                 {
                     successR = true;
                 }
@@ -113,6 +113,28 @@ namespace G_Code_Generator
             else
             { 
                 return false; 
+            }
+        }
+
+        public static bool CheckValueSpeed(string speed)
+        {
+            bool successSpeed = decimal.TryParse(speed, out decimal _valueF);
+
+            if (successSpeed == true)
+            {
+                if (_valueF > 0 && _valueF <= 5000)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                return false;
             }
         }
 

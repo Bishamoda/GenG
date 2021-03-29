@@ -58,7 +58,8 @@ namespace G_Code_Generator
                 _f = txtF.Text;
                
                 SuccessValue.CheckValuesG02(_x, _z, _r);
-                if (SuccessValue.successR == true)
+                SuccessValue.CheckValueSpeed(_f);
+                if (SuccessValue.successR && SuccessValue.CheckValueSpeed(_f)== true)
                 {
                         txtCircle.Text = txtCircle.Text + Environment.NewLine + "G02  X " + _x + " Z " + _z + " R " + _r + " F " + _f + ";";
                         
@@ -90,7 +91,8 @@ namespace G_Code_Generator
 
 
                 SuccessValue.CheckValuesG03(_x, _z, _r);
-                if (SuccessValue.successR == true)
+                SuccessValue.CheckValueSpeed(_f);
+                if (SuccessValue.successR && SuccessValue.CheckValueSpeed(_f) == true)
                 {
                     txtCircle.Text = txtCircle.Text + Environment.NewLine + "G03  X " + _x + " Z " + _z + " R " + _r + " F " + _f + ";";
                     
