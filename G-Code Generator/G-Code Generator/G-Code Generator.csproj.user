@@ -7,19 +7,22 @@
     <Compile Update="Comands\Faska.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Comands\Obrabotka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Comands\Slot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Comands\Zagotovka.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GMTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StartMenu.cs">
+    <Compile Update="StartTok.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StartMenu\StartTok.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Comands\Line.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Comands\Skrug.cs">
+    <Compile Update="Comands\Rectangle.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
