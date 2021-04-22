@@ -66,7 +66,12 @@ namespace G_Code_Generator
             fileItem.DropDownItems.Add(saveItem);
             menuStrip1.Items.Add(fileItem);
 
-
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox5.Checked = false;
+            checkBox6.Checked = false;
         }
 
         //Кнопка открыть файл c G-Code
@@ -112,6 +117,7 @@ namespace G_Code_Generator
                 {
                     _skrug = cr2.circle  + _fast;
                     SuccessValue.ValidData();
+                    checkBox5.Checked = true;
                 }
             }
             else
@@ -300,6 +306,7 @@ namespace G_Code_Generator
                         _newLine + "G01 X" + fs2.rDown + " Z-" + fs2.l + _fast;
 
                     SuccessValue.ValidData();
+                    checkBox1.Checked = true;
                 }
 
             }
@@ -435,6 +442,8 @@ namespace G_Code_Generator
                         _newLine + "G01 X" + ((_rWidth - _sWidth) + _sWidth)+ _fast;
 
                     SuccessValue.ValidData();
+
+                    checkBox3.Checked = true;
                 }
 
             }
@@ -473,6 +482,7 @@ namespace G_Code_Generator
                                      _newLine + "G01 Z-" + (ra2.l + ra2.z) + _fast;
 
                                 SuccessValue.ValidData();
+                                checkBox2.Checked = true;
 
                             }
                         }
@@ -508,6 +518,7 @@ namespace G_Code_Generator
                                      _newLine + "G01 Z-" + (ra2.l + ra2.z) + _fast;
 
                                 SuccessValue.ValidData();
+                                checkBox4.Checked = true;
                             }
                         }
                         else
@@ -542,6 +553,8 @@ namespace G_Code_Generator
                                      _newLine + "G01 Z-" + (ra2.l + ra2.z) + _fast;
 
                                 SuccessValue.ValidData();
+
+                                checkBox6.Checked = true;
                             }
                         }
                         else
@@ -598,9 +611,15 @@ namespace G_Code_Generator
             switch (razmer)
             {
                 case Razmer.G90:
-                    textG.Text = securityString + _newLine + _tool + _newLine + razmer.ToString() + _newLine + _shpindel + _newLine +
-                        _chernovayaObr +_newLine +
-                        _faska + _newLine + _rectangel1 + _newLine + _slot +_newLine + _rectangle2 + _newLine + _skrug + _newLine + _rectangel3 +_newLine + "M30";
+                    if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked) && (checkBox5.Checked) && (checkBox6.Checked) == true)
+                    {
+                        textG.Text = securityString + _newLine + _tool + _newLine + razmer.ToString() + _newLine + _shpindel + _newLine +
+                        _chernovayaObr + _newLine +
+                        _faska + _newLine + _rectangel1 + _newLine + _slot + _newLine + _rectangle2 + _newLine + _skrug + _newLine + _rectangel3 + _newLine + "M30";
+                    }else
+                    {
+                        MessageBox.Show("Вы не записали все размеры", "Внимание", MessageBoxButtons.OK);
+                    }
                     break;
 
                 case Razmer.G91:
@@ -610,5 +629,6 @@ namespace G_Code_Generator
 
         }
 
+       
     }
 }

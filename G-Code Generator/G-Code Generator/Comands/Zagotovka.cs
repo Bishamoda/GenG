@@ -50,9 +50,6 @@ namespace G_Code_Generator
                 }
 
             }
-
-            //DialogResult = DialogResult.OK;
-            
         }
     }
 }
