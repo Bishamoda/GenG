@@ -282,6 +282,9 @@ namespace G_Code_Generator
         private void btn_Clear_Click(object sender, EventArgs e)
         {  
            textG.Clear();
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = false;
+
         }
 
 
@@ -613,8 +616,10 @@ namespace G_Code_Generator
                 case Razmer.G90:
                     if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked) && (checkBox5.Checked) && (checkBox6.Checked) == true)
                     {
+                        pictureBox2.Visible = true;
+                        pictureBox1.Visible = false;
+
                         textG.Text = securityString + _newLine + _tool + _newLine + razmer.ToString() + _newLine + _shpindel + _newLine +
-                        _chernovayaObr + _newLine +
                         _faska + _newLine + _rectangel1 + _newLine + _slot + _newLine + _rectangle2 + _newLine + _skrug + _newLine + _rectangel3 + _newLine + "M30";
                     }else
                     {
