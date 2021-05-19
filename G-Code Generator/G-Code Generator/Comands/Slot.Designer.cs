@@ -34,7 +34,7 @@ namespace G_Code_Generator
             this.textBoxStartZ = new System.Windows.Forms.TextBox();
             this.textBoxW = new System.Windows.Forms.TextBox();
             this.textBoxL = new System.Windows.Forms.TextBox();
-            this.buttonOK = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -80,15 +80,15 @@ namespace G_Code_Generator
             this.textBoxL.TabIndex = 5;
             this.textBoxL.Text = "5";
             // 
-            // buttonOK
+            // btnOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(110, 158);
-            this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(116, 34);
-            this.buttonOK.TabIndex = 6;
-            this.buttonOK.Text = "Записать";
-            this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            this.btnOK.Location = new System.Drawing.Point(110, 158);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(116, 34);
+            this.btnOK.TabIndex = 6;
+            this.btnOK.Text = "Записать";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label3
             // 
@@ -104,7 +104,7 @@ namespace G_Code_Generator
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 213);
-            this.Controls.Add(this.buttonOK);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.textBoxL);
             this.Controls.Add(this.textBoxW);
             this.Controls.Add(this.textBoxStartZ);
@@ -126,7 +126,7 @@ namespace G_Code_Generator
         private System.Windows.Forms.TextBox textBoxStartZ;
         private System.Windows.Forms.TextBox textBoxW;
         private System.Windows.Forms.TextBox textBoxL;
-        private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label3;
     }
 }

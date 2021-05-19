@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -77,15 +77,15 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Длина фаски(высота конуса):";
             // 
-            // button1
+            // btnOK
             // 
-            this.button1.Location = new System.Drawing.Point(114, 215);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 31);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Записать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnOK.Location = new System.Drawing.Point(114, 215);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(151, 31);
+            this.btnOK.TabIndex = 5;
+            this.btnOK.Text = "Записать";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // textBox1
             // 
@@ -155,7 +155,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOK);
             this.Name = "Faska";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Фаска";
@@ -171,7 +171,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

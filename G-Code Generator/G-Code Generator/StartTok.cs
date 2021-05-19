@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections;
 
 namespace G_Code_Generator
 {
@@ -32,6 +33,10 @@ namespace G_Code_Generator
         private string _chernovayaObr;
         private double _glub;
         public static int _rec;
+
+        double[] rects = new double[6];
+        string[] obrabotka = new string[10000000];
+        int n = 0;
 
 
         public StartTok()
@@ -73,6 +78,8 @@ namespace G_Code_Generator
             checkBox5.Checked = false;
             checkBox6.Checked = false;
         }
+
+        
 
         //Кнопка открыть файл c G-Code
         void openItem_Clicked(object sender, EventArgs e)
@@ -285,6 +292,23 @@ namespace G_Code_Generator
             pictureBox1.Visible = true;
             pictureBox2.Visible = false;
 
+            
+            _chernovayaObr = " ";
+
+            for (int i = 0; i > n;)
+            {
+                obrabotka[i] = " ";
+                i++;
+                n--;
+            }
+
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+            checkBox5.Checked = false;
+            checkBox6.Checked = false;
+            
         }
 
 
@@ -304,7 +328,7 @@ namespace G_Code_Generator
                 }
                 else
                 {
-                    _faska = "G00 X0 Z" + fs2.z + 
+                        _faska = "G00 X0 Z" + fs2.z + 
                         _newLine + "G01 X" + fs2.rUp + " Z" + fs2.z + _fast +
                         _newLine + "G01 X" + fs2.rDown + " Z-" + fs2.l + _fast;
 
@@ -340,8 +364,131 @@ namespace G_Code_Generator
 
                     _glub = obr2._glubina;
 
-                    _chernovayaObr = "G01" + _glub;
+                    var prohod1 = (int)((int)(_zWidth/2 - rects[4])/ _glub);
+                    
+                    for (int i = 1; i <= prohod1;)
+                    {
+                            obrabotka[n] = 
+                            "G00 X" + _xStart + " Z" + _zStart + _newLine +
+                            "G01 X" + (_zWidth / 2 - _glub * i) + _fast + _newLine +
+                            "G01 Z-" + _zLength + _fast + _newLine +
+                            "G00 X" + _xStart + _newLine +
+                            "G00 Z" + _zStart + _newLine;
+                            n++;
+                            i++;
+                    }
 
+
+                    var prohod2 = (int)((int)(_zWidth / 2 - rects[2]) / _glub);
+
+                    if (rects[2] == rects[0])
+                    {
+
+                            for (int i = 1; i <= prohod2;)
+                            {
+                                if (((_zWidth / 2 - _glub * i) >= 24) && ((_zWidth / 2 - _glub * i) <= 30) && (_glub == 1))
+                                {
+                                        obrabotka[n] =
+                                        "G00 X" + _xStart + " Z" + _zStart + _newLine +
+                                        "G01 X" + (_zWidth / 2 - _glub * i) + _fast + _newLine +
+                                        "G01 Z-" + (47 - 3 * Math.Sqrt(i)) + _fast + _newLine +
+                                        "G00 X" + _xStart + _newLine +
+                                        "G00 Z" + _zStart + _newLine;
+                                        n++;
+                                        i++;
+                                }else
+                                 {
+                                    
+                                        
+                                        obrabotka[n] =
+                                        "G00 X" + _xStart + " Z" + _zStart + _newLine +
+                                        "G01 X" + (_zWidth / 2 - _glub * i) + _fast + _newLine +
+                                        "G01 Z-" + rects[3] + _fast + _newLine +
+                                        "G00 X" + _xStart + _newLine +
+                                        "G00 Z" + _zStart + _newLine;
+                                        i++;
+                                        n++;
+                                    
+                                }
+
+                            }
+                           
+                            
+
+                    }
+                    else
+                    {
+                        prohod2 = (int)((int)(_zWidth / 2 - rects[0]) / _glub);
+                        var prohod3 = (int)((int)(_zWidth / 2 - rects[2]) / _glub);
+
+                        if (rects[0] > rects[2])
+                        {
+
+                            for (int i = 1; i <= prohod2;)
+                            {
+
+                                obrabotka[n] =
+                                "G00 X" + _xStart + " Z" + _zStart + _newLine +
+                                "G01 X" + (_zWidth / 2 - _glub * i) + _fast + _newLine +
+                                "G01 Z-" + rects[3] + _fast + _newLine +
+                                "G00 X" + _xStart + _newLine +
+                                "G00 Z" + _zStart + _newLine;
+                                n++;
+                                i++;
+                            }
+
+                            for (int i = 1; i <= prohod3;)
+                            {
+
+                                obrabotka[n] =
+                                "G00 X" + rects[0] + _newLine + 
+                                "G00 Z-" + rects[1] + _newLine +
+                                "G01 X" + (_zWidth / 2 - _glub * i) + _fast + _newLine +
+                                "G01 Z-" + rects[3] + _fast + _newLine +
+                                "G00 X" + rects[0] + _newLine +
+                                "G00 Z-" + rects[1] + _newLine;
+                                n++;
+                                i++;
+                            }
+                        }
+                        else
+                        {
+                            for (int i = 1; i <= prohod2;)
+                            {
+
+                                obrabotka[n] =
+                                "G00 X" + _xStart + " Z" + _zStart + _newLine +
+                                "G01 X" + (_zWidth / 2 - _glub * i) + _fast + _newLine +
+                                "G01 Z-" + rects[3] + _fast + _newLine +
+                                "G00 X" + _xStart + _newLine +
+                                "G00 Z" + _zStart + _newLine;
+                                n++;
+                                i++;
+                            }
+
+                            for (int i = 1; i <= prohod3;)
+                            {
+
+                                obrabotka[n] = 
+                                "G00 X" + _xStart + _newLine +
+                                "G00 Z-" + _zStart + _newLine +
+                                "G01 X" + (_zWidth / 2 - _glub * i) + _fast + _newLine +
+                                "G01 Z-" + rects[0] + _fast + _newLine +
+                                "G00 X" + _xStart + _newLine +
+                                "G00 Z-" + _zStart + _newLine;
+                                n++;
+                                i++;
+                            }
+                        }
+
+                    }
+
+                    for (int i = 0; i <= n;)
+                    {
+                        _chernovayaObr += obrabotka[i];
+                        i++;
+                    }
+                   
                     SuccessValue.ValidData();
                 }
 
@@ -439,10 +586,11 @@ namespace G_Code_Generator
                     _sLength = sl2.l;
                     _sWidth = sl2.w;
 
-                    _slot = "G01 Z-" + sl2.z + _fast + 
-                        _newLine + "G01 X" + (_rWidth - _sWidth) +_fast +
-                        _newLine +"G01 Z-"+ (_rLength + _sLength) + _fast + 
-                        _newLine + "G01 X" + ((_rWidth - _sWidth) + _sWidth)+ _fast;
+                    _slot = 
+                        "G01 Z-" + sl2.z + _fast + _newLine + 
+                        "G01 X" + (_rWidth - _sWidth) +_fast +_newLine +
+                        "G01 Z-"+ (_rLength + _sLength) + _fast + _newLine + 
+                        "G01 X" + _rWidth + _fast;
 
                     SuccessValue.ValidData();
 
@@ -477,12 +625,27 @@ namespace G_Code_Generator
                             }
                             else
                             {
-                                _rWidth = ra2.w;
-                                _rLength = ra2.l + ra2.z;
+                                switch (razmer)
+                                {
+                                    case Razmer.G90:
+                                        _rWidth = ra2.w;
+                                        _rLength = ra2.l + ra2.z;
+                                        break;
+                                    case Razmer.G91:
+                                        _rWidth = ra2.w;
+                                        _rLength = ra2.l;
+                                        break;
+                                    
+                                }
+                                
+
+                                rects[0] = _rWidth;
+                                rects[1] = _rLength;
+
 
                                 _rectangel1 = "G01 Z-" + ra2.z + _fast + 
-                                    _newLine + "G01 X" + ra2.w + _fast +
-                                     _newLine + "G01 Z-" + (ra2.l + ra2.z) + _fast;
+                                _newLine + "G01 X" + _rWidth + _fast +
+                                _newLine + "G01 Z-" + _rLength + _fast;
 
                                 SuccessValue.ValidData();
                                 checkBox2.Checked = true;
@@ -513,12 +676,25 @@ namespace G_Code_Generator
                             }
                             else
                             {
-                                _rWidth = ra2.w;
-                                _rLength = ra2.l + ra2.z;
+                                switch (razmer)
+                                {
+                                    case Razmer.G90:
+                                        _rWidth = ra2.w;
+                                        _rLength = ra2.l + ra2.z;
+                                        break;
+                                    case Razmer.G91:
+                                        _rWidth = ra2.w;
+                                        _rLength = ra2.l;
+                                        break;
+
+                                }
+
+                                rects[2] = _rWidth;
+                                rects[3] = _rLength;
 
                                 _rectangle2 = "G01 Z-" + ra2.z + _fast +
-                                    _newLine + "G01 X" + ra2.w + _fast +
-                                     _newLine + "G01 Z-" + (ra2.l + ra2.z) + _fast;
+                                _newLine + "G01 X" + _rWidth + _fast +
+                                _newLine + "G01 Z-" + _rLength + _fast;
 
                                 SuccessValue.ValidData();
                                 checkBox4.Checked = true;
@@ -548,12 +724,25 @@ namespace G_Code_Generator
                             }
                             else
                             {
-                                _rWidth = ra2.w;
-                                _rLength = ra2.l + ra2.z;
+                                switch (razmer)
+                                {
+                                    case Razmer.G90:
+                                        _rWidth = ra2.w;
+                                        _rLength = ra2.l + ra2.z;
+                                        break;
+                                    case Razmer.G91:
+                                        _rWidth = ra2.w;
+                                        _rLength = ra2.l;
+                                        break;
+
+                                }
+
+                                rects[4] = _rWidth;
+                                rects[5] = _rLength;
 
                                 _rectangel3 = "G01 Z-" + ra2.z + _fast +
-                                    _newLine + "G01 X" + ra2.w + _fast +
-                                     _newLine + "G01 Z-" + (ra2.l + ra2.z) + _fast;
+                                _newLine + "G01 X" + _rWidth + _fast +
+                                _newLine + "G01 Z-" + _rLength + _fast;
 
                                 SuccessValue.ValidData();
 
@@ -619,16 +808,60 @@ namespace G_Code_Generator
                         pictureBox2.Visible = true;
                         pictureBox1.Visible = false;
 
-                        textG.Text = securityString + _newLine + _tool + _newLine + razmer.ToString() + _newLine + _shpindel + _newLine +
-                        _faska + _newLine + _rectangel1 + _newLine + _slot + _newLine + _rectangle2 + _newLine + _skrug + _newLine + _rectangel3 + _newLine + "M30";
-                    }else
+                        textG.Text = securityString + _newLine +
+                            _tool + _newLine +
+                            razmer.ToString() + _newLine +
+                            _shpindel + _newLine +
+                            _chernovayaObr + _newLine +
+                            "G00 X" + _xStart + _newLine +
+                            "G00 Z" + _zStart + _newLine +
+                            _faska + _newLine +
+                            _rectangel1 + _newLine +
+                            _slot + _newLine +
+                            _rectangle2 + _newLine +
+                            _skrug + _newLine +
+                            _rectangel3 + _newLine +
+                            "G00 X" + _xStart + _newLine +
+                            "G00 Z-" + _zStart + _newLine +
+                            "M30";
+                        var check = textG.Text;
+                        textG.Text = check.Replace(",", ".");
+                    }
+                    else
                     {
                         MessageBox.Show("Вы не записали все размеры", "Внимание", MessageBoxButtons.OK);
                     }
                     break;
 
+                    //пока что в доработке!!!
                 case Razmer.G91:
-                    
+                    if ((checkBox1.Checked) && (checkBox2.Checked) && (checkBox2.Checked) && (checkBox3.Checked) && (checkBox4.Checked) && (checkBox5.Checked) && (checkBox6.Checked) == true)
+                    {
+                        pictureBox2.Visible = true;
+                        pictureBox1.Visible = false;
+
+                        textG.Text = securityString + _newLine + 
+                            _tool + _newLine + 
+                            razmer.ToString() + _newLine + 
+                            _shpindel + _newLine +
+                            _chernovayaObr + _newLine +
+                            "G00 X" + _xStart + _newLine +
+                            "G00 Z-" + _zStart + _newLine + 
+                            _faska + _newLine + 
+                            _rectangel1 + _newLine + 
+                            _slot + _newLine + 
+                            _rectangle2 + _newLine +
+                            _skrug + _newLine + 
+                            _rectangel3 + _newLine +
+                            "G00 X" + _xStart + _newLine +
+                            "G00 Z-" + _zStart + _newLine + 
+                            "M30";
+                     
+                    }
+                    else
+                    {
+                        MessageBox.Show("Вы не записали все размеры", "Внимание", MessageBoxButtons.OK);
+                    }
                     break;
             }
 

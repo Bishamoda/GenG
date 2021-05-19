@@ -18,7 +18,7 @@ namespace G_Code_Generator
             InitializeComponent();
         }
 
-        private void buttonOK_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
 
             if ((string.IsNullOrEmpty(textBoxW.Text)) || (string.IsNullOrEmpty(textBoxW.Text) || (string.IsNullOrEmpty(textBoxStartZ.Text))))
@@ -31,7 +31,6 @@ namespace G_Code_Generator
                 _sLength = textBoxL.Text;
                 _sWidth = textBoxW.Text;
 
-                //SuccessValue.NextValues(_sWidth, _sLength);
                 SuccessValue.CheckValueSlot(_sLength, _sWidth, _startSZ);
                 if (SuccessValue.valueSlot == true)
                 {

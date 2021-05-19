@@ -327,7 +327,7 @@
             this.textBoxStartZ.Name = "textBoxStartZ";
             this.textBoxStartZ.Size = new System.Drawing.Size(75, 23);
             this.textBoxStartZ.TabIndex = 26;
-            this.textBoxStartZ.Text = "10";
+            this.textBoxStartZ.Text = "5";
             // 
             // labelZ
             // 
@@ -398,7 +398,7 @@
             this.btn_Clear.Name = "btn_Clear";
             this.btn_Clear.Size = new System.Drawing.Size(118, 32);
             this.btn_Clear.TabIndex = 32;
-            this.btn_Clear.Text = "Очистить";
+            this.btn_Clear.Text = "Сброс";
             this.btn_Clear.UseVisualStyleBackColor = true;
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
@@ -481,7 +481,7 @@
             this.textBoxF.Name = "textBoxF";
             this.textBoxF.Size = new System.Drawing.Size(75, 23);
             this.textBoxF.TabIndex = 40;
-            this.textBoxF.Text = "100";
+            this.textBoxF.Text = "1000";
             // 
             // label10
             // 
@@ -494,6 +494,7 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.AutoCheck = false;
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(307, 423);
             this.checkBox1.Name = "checkBox1";
@@ -504,6 +505,7 @@
             // 
             // checkBox2
             // 
+            this.checkBox2.AutoCheck = false;
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(404, 423);
             this.checkBox2.Name = "checkBox2";
@@ -514,6 +516,7 @@
             // 
             // checkBox3
             // 
+            this.checkBox3.AutoCheck = false;
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(534, 423);
             this.checkBox3.Name = "checkBox3";
@@ -524,6 +527,7 @@
             // 
             // checkBox4
             // 
+            this.checkBox4.AutoCheck = false;
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(307, 455);
             this.checkBox4.Name = "checkBox4";
@@ -534,6 +538,7 @@
             // 
             // checkBox5
             // 
+            this.checkBox5.AutoCheck = false;
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(437, 455);
             this.checkBox5.Name = "checkBox5";
@@ -544,6 +549,7 @@
             // 
             // checkBox6
             // 
+            this.checkBox6.AutoCheck = false;
             this.checkBox6.AutoSize = true;
             this.checkBox6.Location = new System.Drawing.Point(534, 455);
             this.checkBox6.Name = "checkBox6";

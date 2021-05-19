@@ -19,7 +19,7 @@ namespace G_Code_Generator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
             if ((string.IsNullOrEmpty(textBox3.Text)) || (string.IsNullOrEmpty(textBox2.Text)))
             {

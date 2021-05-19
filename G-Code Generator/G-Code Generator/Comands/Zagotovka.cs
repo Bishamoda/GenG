@@ -14,8 +14,8 @@ namespace G_Code_Generator
         private string _zLength, _zWidth;
         private bool successL = false;
         private bool successW = false;
-        private float zL, zW;
-        public float L, W;
+        private double zL, zW;
+        public double L, W;
 
 
         public Zagotovka()
@@ -23,7 +23,7 @@ namespace G_Code_Generator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
 
             if ((string.IsNullOrEmpty(textBox1.Text)) || (string.IsNullOrEmpty(textBox2.Text)))
@@ -35,8 +35,8 @@ namespace G_Code_Generator
                 _zLength = textBox1.Text;
                 _zWidth = textBox2.Text;
 
-                successL = float.TryParse(_zLength, out zL);
-                successW = float.TryParse(_zWidth, out zW);
+                successL = double.TryParse(_zLength, out zL);
+                successW = double.TryParse(_zWidth, out zW);
 
                 while (successL && successW == true)
                 {
