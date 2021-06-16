@@ -40,34 +40,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 59);
+            this.label1.Location = new System.Drawing.Point(19, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 15);
+            this.label1.Size = new System.Drawing.Size(155, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Длина прямоугольника:";
+            this.label1.Text = "Длина прямоугольника(L):";
             // 
             // textBoxL
             // 
-            this.textBoxL.Location = new System.Drawing.Point(194, 59);
+            this.textBoxL.Location = new System.Drawing.Point(221, 59);
             this.textBoxL.Name = "textBoxL";
             this.textBoxL.Size = new System.Drawing.Size(100, 23);
             this.textBoxL.TabIndex = 1;
+            this.textBoxL.TextChanged += new System.EventHandler(this.textBoxL_TextChanged);
             // 
             // textBoxW
             // 
-            this.textBoxW.Location = new System.Drawing.Point(194, 97);
+            this.textBoxW.Location = new System.Drawing.Point(221, 97);
             this.textBoxW.Name = "textBoxW";
             this.textBoxW.Size = new System.Drawing.Size(100, 23);
             this.textBoxW.TabIndex = 2;
+            this.textBoxW.TextChanged += new System.EventHandler(this.textBoxW_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(19, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 15);
+            this.label2.Size = new System.Drawing.Size(181, 15);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Ширина прямоугольника:";
+            this.label2.Text = "Ширина прямоугольника (D/2):";
             // 
             // btnOK
             // 
@@ -81,15 +83,16 @@
             // 
             // txtStartZ
             // 
-            this.txtStartZ.Location = new System.Drawing.Point(194, 19);
+            this.txtStartZ.Location = new System.Drawing.Point(221, 19);
             this.txtStartZ.Name = "txtStartZ";
             this.txtStartZ.Size = new System.Drawing.Size(100, 23);
             this.txtStartZ.TabIndex = 10;
+            this.txtStartZ.TextChanged += new System.EventHandler(this.txtStartZ_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 19);
+            this.label4.Location = new System.Drawing.Point(19, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 15);
             this.label4.TabIndex = 11;

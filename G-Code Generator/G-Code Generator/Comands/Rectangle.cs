@@ -14,6 +14,21 @@ namespace G_Code_Generator
         private string _rLength, _rWidth, _startZ;
         public double l, w, z;
 
+        private void txtStartZ_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxL_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxW_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public Rectangle()
         {
             InitializeComponent();

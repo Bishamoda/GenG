@@ -33,7 +33,6 @@ namespace G_Code_Generator
         private string _chernovayaObr;
         private double _glub;
         public static int _rec;
-
         double[] rects = new double[6];
         string[] obrabotka = new string[10000000];
         int n = 0;
@@ -71,12 +70,16 @@ namespace G_Code_Generator
             fileItem.DropDownItems.Add(saveItem);
             menuStrip1.Items.Add(fileItem);
 
+            //Запрет на изменение состояния чек-боксов.
             checkBox1.Checked = false;
             checkBox2.Checked = false;
             checkBox3.Checked = false;
             checkBox4.Checked = false;
             checkBox5.Checked = false;
             checkBox6.Checked = false;
+
+            //изменяем видимость картинки с контуром готовой детали
+            pictureBox2.Visible = false;
         }
 
         
@@ -150,7 +153,7 @@ namespace G_Code_Generator
 
         }
 
-        
+        //Кнопка скорости шпинделя
         private void btn_M03_Click(object sender, EventArgs e)
         {
             
@@ -185,8 +188,7 @@ namespace G_Code_Generator
 
         }
 
-        
-
+        //Кнопка смены инструмента
         private void btnToolChange_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtTool.Text))
@@ -202,7 +204,7 @@ namespace G_Code_Generator
             }
         }
 
-
+        //Чекбокс выбора системы отсчета G90
         private void checkBoxG90_Click(object sender, EventArgs e)
         {
             if (checkBoxG91.Checked == true)
@@ -220,6 +222,7 @@ namespace G_Code_Generator
             }
         }
 
+        //Чекбокс выбора системы отсчета G91
         private void checkBoxG91_Click(object sender, EventArgs e)
         {
             if (checkBoxG90.Checked == true)
@@ -236,6 +239,7 @@ namespace G_Code_Generator
             }
         }
 
+        //Чекбокс выбора направления вращения шпинделя М03
         private void checkBoxM03_Click(object sender, EventArgs e)
         {
 
@@ -252,6 +256,7 @@ namespace G_Code_Generator
             }
         }
 
+        //Чекбокс выбора направления вращения шпинделя М04
         private void checkBoxM04_Click(object sender, EventArgs e)
         {
             if (checkBoxM03.Checked == true)
@@ -268,6 +273,7 @@ namespace G_Code_Generator
 
         }
 
+        //Безопасная точка/стартовая позиция где находится инструмент
         private void btn_StartPosition_Click(object sender, EventArgs e)
         {
             if ((string.IsNullOrEmpty(textBoxStartX.Text)) || (string.IsNullOrEmpty(textBoxStartZ.Text)))
@@ -286,6 +292,7 @@ namespace G_Code_Generator
             }
         }
 
+        //Кнопка удаления теста + сброс размеров
         private void btn_Clear_Click(object sender, EventArgs e)
         {  
            textG.Clear();
@@ -311,7 +318,7 @@ namespace G_Code_Generator
             
         }
 
-
+        //Вызов формы фаски
         private void btnFaska_Click(object sender, EventArgs e)
         {
             Faska fs1 = (Faska)Application.OpenForms["Faska"];
@@ -344,6 +351,7 @@ namespace G_Code_Generator
 
         }
 
+        //Вызов формы глубины обработки
         private void btnChernovayaObr_Click(object sender, EventArgs e)
         {
             Obrabotka obr1 = (Obrabotka)Application.OpenForms["Obrabotka"];
@@ -500,35 +508,35 @@ namespace G_Code_Generator
 
         }
 
+        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Visible == true)
             {
                 pictureBox1.Visible = false;
-                pictureBox2.Visible = true;
+                pictureBox3.Visible = true;
             }
             else
             {
                 pictureBox1.Visible = true;
-                pictureBox2.Visible = false;
+                pictureBox3.Visible = false;
             }
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (pictureBox2.Visible == true)
+            if (pictureBox3.Visible == true)
             {
                 pictureBox1.Visible = true;
-                pictureBox2.Visible = false;
+                pictureBox3.Visible = false;
             }
             else
             {
                 pictureBox1.Visible = false;
-                pictureBox2.Visible = true;
+                pictureBox3.Visible = true;
             }
-
         }
 
+        //Кнопка задания скорости подачи
         private void buttonF_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxF.Text))
@@ -551,21 +559,25 @@ namespace G_Code_Generator
             }
         }
 
+       //Кнопка прямоуголдьник 1
         private void buttonRectanle_Click(object sender, EventArgs e)
         {
             Rectangel(ButtonRectangel.R1);
         }
 
+        //Кнопка прямоуголдьник 2
         private void btnRectangel2_Click(object sender, EventArgs e)
         {
             Rectangel(ButtonRectangel.R2);
         }
 
+        //Кнопка прямоуголдьник 3
         private void btnRectangel3_Click(object sender, EventArgs e)
         {
             Rectangel(ButtonRectangel.R3);
         }
 
+        //Вызов формы канавки
         private void btnGroove_Click(object sender, EventArgs e)
         {
             Slot sl1 = (Slot)Application.OpenForms["Slot"];
@@ -586,13 +598,18 @@ namespace G_Code_Generator
                     _sLength = sl2.l;
                     _sWidth = sl2.w;
 
-                    _slot = 
-                        "G01 Z-" + sl2.z + _fast + _newLine + 
-                        "G01 X" + (_rWidth - _sWidth) +_fast +_newLine +
-                        "G01 Z-"+ (_rLength + _sLength) + _fast + _newLine + 
+                    _slot =
+                        "G01 Z-" + (sl2.z + _sLength / 2) + _fast + _newLine +
+                        "G01 X" + (_rWidth - _sWidth) + _fast + _newLine +
+                        "G01 Z-" + (_rLength + _sLength) + _fast + _newLine +
+                        "G01 X" + _rWidth + _fast +
+                        "G01 Z-" + (sl2.z + _sLength / 2) + _fast + _newLine +
+                        "G01 X" + (_rWidth - _sWidth) + _fast + _newLine +
+                        "G01 Z-" + sl2.z + _fast + _newLine +
                         "G01 X" + _rWidth + _fast;
 
-                    SuccessValue.ValidData();
+
+                SuccessValue.ValidData();
 
                     checkBox3.Checked = true;
                 }
@@ -605,6 +622,8 @@ namespace G_Code_Generator
 
         }
 
+        //В зависимотсти от нажатой кнопки прямоугольника, меняются стандартный набор размеров
+        //После этого размеры записываются в массив данных для прямоугольников. Через этот массив происходит черновая обработка
         private void Rectangel(ButtonRectangel btnRec)
         {
             switch (btnRec)
@@ -761,7 +780,7 @@ namespace G_Code_Generator
             
         }
 
-
+        //Задание размеров заготовки
         private void btn_Zagotovka_Click(object sender, EventArgs e)
         {
 
@@ -793,12 +812,11 @@ namespace G_Code_Generator
             }
         }
 
-        
-
+        //Кнопка генерации G-кода
         private void btn_GenG_Click(object sender, EventArgs e)
         {
 
-            var securityString = "G17 G90 G15 G191 G71 G72 G172 G272 G94 G97 G49 G40 G00 G80 G98 G53 G153 G193 G64 BRISK CUT2DF // Строка безопасности";
+            var securityString = "G18 G90 G15 G191 G71 G72 G172 G272 G94 G97 G49 G40 G00 G80 G98 G53 G153 G193 G64 BRISK CUT2DF // Строка безопасности";
 
             switch (razmer)
             {
@@ -817,12 +835,14 @@ namespace G_Code_Generator
                             "G00 Z" + _zStart + _newLine +
                             _faska + _newLine +
                             _rectangel1 + _newLine +
-                            _slot + _newLine +
                             _rectangle2 + _newLine +
                             _skrug + _newLine +
                             _rectangel3 + _newLine +
                             "G00 X" + _xStart + _newLine +
-                            "G00 Z-" + _zStart + _newLine +
+                            "G00 Z" + _zStart + _newLine +
+                            _slot + _newLine +
+                            "G00 X" + _xStart + _newLine +
+                            "G00 Z" + _zStart + _newLine +
                             "M30";
                         var check = textG.Text;
                         textG.Text = check.Replace(",", ".");

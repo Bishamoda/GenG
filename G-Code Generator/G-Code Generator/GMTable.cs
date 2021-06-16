@@ -20,7 +20,6 @@ namespace G_Code_Generator
         private void GMTable_Load(object sender, EventArgs e)
         {
             //Заполнение таблицы 1, редактировать ее нельзя по свойствам
-
             dataGridView1.Rows.Add("G00", "Ускоренное перемещение на холостом ходу");
             dataGridView1.Rows.Add("G01", "Линейная интерполяция");
             dataGridView1.Rows.Add("G02", "Круговая интерполяция по часовой стрелке");

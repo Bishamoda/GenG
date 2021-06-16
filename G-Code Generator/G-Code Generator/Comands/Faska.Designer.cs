@@ -45,7 +45,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(219, 75);
+            this.textBox2.Location = new System.Drawing.Point(256, 75);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(105, 23);
             this.textBox2.TabIndex = 9;
@@ -62,7 +62,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(219, 157);
+            this.textBox3.Location = new System.Drawing.Point(256, 157);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(105, 23);
             this.textBox3.TabIndex = 7;
@@ -71,11 +71,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 157);
+            this.label1.Location = new System.Drawing.Point(35, 157);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 15);
+            this.label1.Size = new System.Drawing.Size(182, 15);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Длина фаски(высота конуса):";
+            this.label1.Text = "Длина фаски L (высота конуса):";
             // 
             // btnOK
             // 
@@ -89,7 +89,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(219, 33);
+            this.textBox1.Location = new System.Drawing.Point(256, 33);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(105, 23);
             this.textBox1.TabIndex = 11;
@@ -98,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 33);
+            this.label3.Location = new System.Drawing.Point(35, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 15);
             this.label3.TabIndex = 10;
@@ -126,7 +126,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(219, 115);
+            this.textBox4.Location = new System.Drawing.Point(256, 115);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(105, 23);
             this.textBox4.TabIndex = 15;
@@ -137,9 +137,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(35, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 15);
+            this.label5.Size = new System.Drawing.Size(191, 15);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Радиус нижнего основания:";
+            this.label5.Text = "Радиус нижнего основания (D/2):";
             // 
             // Faska
             // 
